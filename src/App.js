@@ -1,8 +1,8 @@
 import "../src/styles/Global.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UserNav from "./components/navigation/UserNav";
 import Test from "./pages/Test";
 import AdminNav from "./components/navigation/AdminNav";
+import UserNav from "./components/navigation/UserNav";
 
 function App() {
   return (

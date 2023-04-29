@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AdminNav = () => {
   return (
     <AdNav>
-      <Link to="/">
+      <Link to="/admin/main">
         <Logo>로고</Logo>
       </Link>
     </AdNav>
