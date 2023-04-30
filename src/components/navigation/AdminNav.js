@@ -1,6 +1,6 @@
 // 관리자 네비게이션바
 import React from "react";
-import { AdNav, Logo } from "./Nav";
+import { AdNav, Logo } from "./NavStyle";
 import { Link } from "react-router-dom";
 
 const AdminNav = () => {

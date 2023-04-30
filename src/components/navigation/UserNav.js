@@ -1,6 +1,6 @@
 // 사용자 네비게이션바
 import React from "react";
-import { Logo, Menu, MenuWrapper, Nav } from "./Nav";
+import { Logo, Menu, MenuWrapper, Nav } from "./NavStyle";
 import { Link } from "react-router-dom";
 
 const UserNav = () => {
