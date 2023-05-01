@@ -8,7 +8,6 @@ export const Logo = ({ children }) => {
       css={css`
         border: solid white;
         color: white;
-        cursor: pointer;
       `}
     >
       로고
@@ -19,12 +18,12 @@ export const Logo = ({ children }) => {
 export const InputBox = prop => {
   const typeStyles = {
     id: {
-      name: "id_admin",
+      name: "id",
       type: "text",
       placeholder: "아이디를 입력해주세요",
     },
     pw: {
-      name: "pw_admin",
+      name: "pw",
       type: "password",
       placeholder: "비밀번호를 입력해주세요",
     },
@@ -34,6 +33,7 @@ export const InputBox = prop => {
 
   return (
     <input
+      onChange={prop.onchange}
       name={typeData.name}
       type={typeData.type}
       placeholder={typeData.placeholder}
@@ -43,7 +43,6 @@ export const InputBox = prop => {
         border-radius: 0.53em;
         border: 0.0714em solid white;
         letter-spacing: -0.03em;
-        /* padding-left: 1em; */
         transition: all 0.4s ease 0s;
         outline-color: #7f7f7f;
         color: white;
@@ -57,9 +56,10 @@ export const InputBox = prop => {
   );
 };
 
-export const LoginBtn = ({ children }) => {
+export const LoginBtn = prop => {
   return (
     <button
+      onClick={prop.onClick}
       css={css`
         width: 26.3em;
         height: 4em;
@@ -75,14 +75,15 @@ export const LoginBtn = ({ children }) => {
         text-align: center;
         padding: 1px 6px;
         font-size: 12px;
+        font-weight: 1000;
       `}
     >
-      {children}
+      {prop.children}
     </button>
   );
 };
 
-const LoginBox = route => {
+const LoginBox = ({ children }) => {
   return (
     <div
       css={css`
@@ -105,10 +106,7 @@ const LoginBox = route => {
           align-items: center;
         `}
       >
-        <Logo />
-        <InputBox type="id" />
-        <InputBox type="pw" />
-        <LoginBtn>강남멋사 관리자 로그인</LoginBtn>
+        {children}
       </div>
     </div>
   );
