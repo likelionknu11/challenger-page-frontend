@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserNav from "./components/navigation/UserNav";
 import Test from "./pages/Test";
 import AdminNav from "./components/navigation/AdminNav";
-
+import Testpage from './pages/userDetailPage/userDetailPage';
 function App() {
   return (
     <div className="App">
@@ -20,6 +20,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <Testpage/>
     </div>
   );
 }
