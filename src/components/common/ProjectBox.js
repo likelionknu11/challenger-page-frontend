@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { Link } from "react-router-dom";
 
 const container = css`
   background-color: #c9c9c9;
@@ -9,6 +10,8 @@ const container = css`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: #000000;
 `;
 
 const title = css`
@@ -16,7 +19,7 @@ const title = css`
   text-align: center;
   width: 100%;
   height: 45px;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-weight: 700;
   font-size: 16px;
   line-height: 45px;
@@ -27,7 +30,7 @@ const content = css`
   width: 100%;
   background-color: #c9c9c9;
   display: inline-block;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-weight: 400;
   font-size: 16px;
   color: rgb(43, 43, 43, 0.5);
@@ -44,14 +47,18 @@ const image = css`
   object-fit: cover;
 `;
 
-export default function ProjectBox() {
+export default function ProjectBox({ detailPage, project, match }) {
+  // console.log(props.match.url);
   return (
-    <div css={container}>
-      <div css={title}>새내기 미션북</div>
-      <div css={content}>
-        썸네일
-        {/* <img src="" css={image} alt="썸네일" /> */}
+    /*<Link to={`${match.url}/${mach.params.id}`} */
+    <Link to={`/${detailPage}/${project.id}`}>
+      <div css={container}>
+        <div css={title}>새내기 미션북{/*{project.title}*/}</div>
+        <div css={content}>
+          썸네일
+          {/* <img src="{project.image}" css={image} alt="썸네일" /> */}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
