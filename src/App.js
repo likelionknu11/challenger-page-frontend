@@ -4,6 +4,7 @@ import UserNav from "./components/navigation/UserNav";
 import Test from "./pages/Test";
 import AdminNav from "./components/navigation/AdminNav";
 import Testpage from './pages/userDetailPage/userDetailPage';
+import Testpage2 from './pages/adminDetailPage/adminDetailPage';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Testpage/>
+      <Testpage2/>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import { css } from "@emotion/react";
 import React, { useState } from 'react';
-import Modal from '../../pages/ModalPage/Modal';
+import Modal from '../Modal/Modal';
 
 
 export const ThumPage = ({ children }) => {
@@ -152,7 +152,7 @@ export const ThumSpan = ({ children }) => {
       </>
   );
 };
-  export const ThumMadalButton = ({ children, backcolor, color }) => {
+  export const MadalButton = ({ children, backcolor, color }) => {
     // useState를 사용하여 open상태를 변경한다. (open일때 true로 만들어 열리는 방식)
   const [modalOpen, setModalOpen] = useState(false);
 

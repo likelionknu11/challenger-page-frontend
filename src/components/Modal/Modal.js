@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '../../components/DetailPage/DetailPageCss';
-import { ModalSection,ModalHeaderButton, OpenModals,ModalHeader,ModalText,ModalBody, ModalFooter,ModalTitle} from '../../components/Modal/ModalCss';
+import { Button } from '../../components/common/Button';
+import { ModalSection,ModalHeaderButton, OpenModals,ModalHeader,ModalText,ModalBody, ModalFooter,ModalTitle} from './ModalCss';
 
 const Modal = (props) => {
   const {open, close} = props;

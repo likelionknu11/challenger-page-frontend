@@ -24,8 +24,6 @@ const Testpage = () => {
       <ThumText>프로젝트 설명</ThumText>
       <ThumFoot>
           <Button backcolor='#D9D9D9' color ='#2B2B2B' onClick={any}>뒤로가기</Button>
-          <Button backcolor='#4F85EB' color ='white'onClick={any}>승인</Button>
-          <MadalButton backcolor='#4F85EB' color ='white'>거절</MadalButton>
       </ThumFoot>
     </ThumPage>
     
