@@ -19,6 +19,9 @@ function App() {
             <Route path="/admin/main" element={<Test />} />
           </Route>
         </Routes>
+        <Routes>
+          <Route path="/test" element={<Test />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

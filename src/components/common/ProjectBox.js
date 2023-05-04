@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
+import { AiFillGithub } from "react-icons/ai";
 
 const container = css`
   @media (min-width: 360px) and (max-width: 1919px) {
@@ -160,6 +161,18 @@ const icon = css`
   margin-right: 10px;
 `;
 
+const github = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: #d9d9d9;
+  border-radius: 5px;
+  margin-right: 10px;
+  text-align: center;
+`;
+
 const image = css`
   height: 100%;
   width: 100%;
@@ -167,12 +180,9 @@ const image = css`
   object-fit: cover;
 `;
 
-export default function ProjectBox({ detailPage, project, match }) {
-  // console.log(props.match.url);
+export default function ProjectBox(prop) {
   return (
-    /*<Link to={`${match.url}/${mach.params.id}`} */
-    /*<Link to={`/${detailPage}/${project.id}`}> */
-    <div css={container}>
+    <div css={container} onClick={prop.onClick}>
       <div css={subContainer1}>
         <div css={pic}>
           썸네일
@@ -181,6 +191,7 @@ export default function ProjectBox({ detailPage, project, match }) {
       </div>
       <div css={subContainer2}>
         <div css={tags}>
+          {/* api 나오면 바꿈 */}
           <div css={tag}>웹{/*{project.tag}*/}</div>
           <div css={tag}>앱</div>
         </div>
@@ -189,7 +200,9 @@ export default function ProjectBox({ detailPage, project, match }) {
           <p css={subTitle}>프로젝트 간략한 설명{/*{project.explain}*/}</p>
         </div>
         <div css={icons}>
-          <div css={icon}>아이콘</div>
+          <div css={icon}>
+            <AiFillGithub css={github} />
+          </div>
           <div css={icon}>아이콘</div>
         </div>
       </div>
