@@ -1,5 +1,6 @@
 /**
  * 관리자 로그인 페이지
+ * + 관리자 페이지 들어오면 인증 관리하기
  */
 import React, { useState } from "react";
 import LoginBox, { InputBox, LoginBtn, Logo } from "./LoginStyles";
@@ -8,9 +9,7 @@ import { auth } from "../../components/store";
 
 const AdminLoginPage = () => {
   const navigate = useNavigate();
-  const { id, setId, pw, setPw } = auth();
-  const realId = "aaaa";
-  const realPw = "aaaa";
+  const { id, setId, pw, setPw, realId, realPw } = auth();
 
   const handleChange = e => {
     if (e.target.name === "id") {

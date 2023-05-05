@@ -4,6 +4,7 @@ import Test from "./pages/Test";
 import AdminNav from "./components/navigation/AdminNav";
 import UserNav from "./components/navigation/UserNav";
 import { UserFormPage } from "./pages/userFormPage/UserFormPage";
+import AdminLoginPage from "./pages/adminLoginPage/AdminLoginPage";
 
 function App() {
   return (

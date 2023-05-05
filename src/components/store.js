@@ -5,17 +5,17 @@ export const auth = create(set => ({
   setId: id => {
     set(state => ({ id: id }));
   },
-  realId: "aaaa",
+  realId: "likelion",
   pw: "",
   setPw: pw => {
     set(state => ({ pw: pw }));
   },
-  realPw: "aaaa",
-  isAuth: false,
+  realPw: "qaearqa",
+  adminState: false,
   loginAuth: () => {
-    set(() => ({ isAuth: true }));
+    set(() => ({ adminState: true }));
   },
   logoutAuth: () => {
-    set(() => ({ isAuth: false }));
+    set(() => ({ adminState: false }));
   },
 }));
