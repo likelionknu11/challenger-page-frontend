@@ -1,12 +1,7 @@
 import React from "react";
-import ProjectBox from "../components/common/ProjectBox";
 
 const Test = () => {
-  return (
-    <div>
-      <ProjectBox />
-    </div>
-  );
+  return <div style={{ color: "white", paddingTop: "100px" }}>메인화면</div>;
 };
 
 export default Test;

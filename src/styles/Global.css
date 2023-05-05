@@ -3,5 +3,9 @@
   padding: 0;
   text-decoration: none;
   background-color: #181818;
-  font-family: 'Roboto', 'Noto Sans';
+  font-family: "Roboto", "Noto Sans";
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
