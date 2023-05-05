@@ -2,7 +2,6 @@
 import React from "react";
 import { Logo, Menu, MenuWrapper, Nav } from "./NavStyle";
 import { Link } from "react-router-dom";
-
 const UserNav = () => {
   return (
     <Nav>
@@ -10,7 +9,9 @@ const UserNav = () => {
         <Logo>로고</Logo>
       </Link>
       <MenuWrapper>
-        <Menu>프로젝트등록</Menu>
+        <Link to="/userForm">
+          <Menu>프로젝트등록</Menu>
+        </Link>
         <Menu>동아리소개</Menu>
         <Link to="https://knu-likelion.org/" target="_blank">
           <Menu>리크루팅</Menu>
