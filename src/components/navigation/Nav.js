@@ -73,12 +73,20 @@ export const Logo = ({ children }) => {
   return (
     <div
       css={css`
-        border: solid #7f7f7f;
-        color: #7f7f7f;
-        cursor: pointer;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
       `}
     >
-      {children}
+      <button
+        css={css`
+          width: 63px;
+          height: 21px;
+          margin-left: 100px;
+          /* background: logo; */
+          cursor: pointer;
+        `}
+      />
     </div>
   );
 };
