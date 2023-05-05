@@ -1,11 +1,14 @@
+/**
+ * 관리자 로그인 페이지
+ */
 import React, { useState } from "react";
 import LoginBox, { InputBox, LoginBtn, Logo } from "./LoginStyles";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../components/store";
 
 const AdminLoginPage = () => {
   const navigate = useNavigate();
-  const [id, setId] = useState("");
-  const [pw, setPw] = useState("");
+  const { id, setId, pw, setPw } = auth();
   const realId = "aaaa";
   const realPw = "aaaa";
 
