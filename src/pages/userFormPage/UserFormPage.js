@@ -217,16 +217,6 @@ export const UserFormPage = () => {
           </td>
         </tr>
       </table>
-      <div style={{ color: "white" }}>프로젝트 명 : {projectTitle}</div>
-      <div style={{ color: "white" }}>팀 명 : {teamTitle}</div>
-      <div style={{ color: "white" }}>팀 장 : {teamBoss}</div>
-      {inputs.map((input) => (
-        <div style={{ color: "white" }}>
-          팀원{input.id} : {input.value}
-        </div>
-      ))}
-      <div style={{ color: "white" }}>프로젝트 설명 : {projectExplain}</div>
-      <div style={{ color: "white" }}>깃허브 주소 : {gitHubLink}</div>
     </Section>
   );
 };
