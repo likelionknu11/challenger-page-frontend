@@ -156,11 +156,7 @@ export const UserFormPage = () => {
                 </Button>
               )}
               {input.id !== 1 && input.id === inputs.length && (
-                <Button
-                  btnColor="red"
-                  backColor="grey"
-                  onClick={handleCancelButtonClick}
-                >
+                <Button btnColor="gray" onClick={handleCancelButtonClick}>
                   삭제
                 </Button>
               )}
@@ -215,7 +211,7 @@ export const UserFormPage = () => {
             />
           </td>
           <td>
-            <Button btnColor="white" backColor="grey" onClick={onClickImgBtn}>
+            <Button btnColor="blue" onClick={onClickImgBtn}>
               파일 선택
             </Button>
           </td>

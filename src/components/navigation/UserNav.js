@@ -2,7 +2,6 @@
 import React from "react";
 import { Logo, Menu, MenuWrapper, Nav } from "./Nav";
 import { Link } from "react-router-dom";
-
 const UserNav = () => {
   return (
     <Nav>
