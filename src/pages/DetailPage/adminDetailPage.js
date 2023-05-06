@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from "../../components/common/Button";
-import { ThumPage, ThumTitle,ThumText,ThumImg,ThumP,ThumSpan,ThumFoot } from '../../components/DetailPage/DetailPageCss';
+import { ThumPage, ThumTitle,ThumText,ThumImg,ThumP,ThumSpan,ThumFoot} from '../../components/DetailPage/DetailPageCss';
 import { Link ,useParams} from 'react-router-dom';
+import { ModalButton } from '../../components/common/Modal/ModalButton';
 const AdminDetailPage = ({project}) => {
   const { id } = useParams();
   const any = () => {
@@ -23,9 +24,11 @@ const AdminDetailPage = ({project}) => {
       <ThumText>프로젝트 설명</ThumText>
       <ThumText>{project.TeamIntro}</ThumText>
       <ThumFoot>
-        <Link to="/admin/main">
-              <Button btnColor="gray" onClick={any}>뒤로가기</Button>
-          </Link>
+      <Link to="/admin/main">
+            <Button btnColor="gray" onClick={any}>뒤로가기</Button>
+        </Link>
+            <Button btnColor="blue" onClick={any}>승인</Button>
+          < ModalButton backcolor='#4F85EB' color ='white'>거절</ ModalButton>
       </ThumFoot>
     </ThumPage>
 
