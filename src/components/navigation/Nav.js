@@ -1,93 +1,48 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import logo from "../../assets/logo.png";
 
 export const Nav = ({ children }) => {
   return (
     <div
       css={css`
         width: 100%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        position: fixed;
-        background-color: hsla(0, 0%, 9%, 9);
-        z-index: 100;
-        backdrop-filter: blur(20px);
-        @media (min-width: 766px) and (max-width: 1919px) {
-          height: 48px;
-          padding: 12px 48px;
-          justify-content: space-between;
-        }
-      `}
-    >
-      <div
-        css={css`
-          max-width: 1280px;
-          width: 90%;
-          display: flex;
-          justify-content: space-between;
-          background-color: transparent;
-          // Chrome,Safari, and Opera에서 박스 정렬 auto
-          -webkit-box-pack: justify;
-        `}
-      >
-        {children}
-      </div>
-    </div>
-  );
-};
-
-export const AdNav = ({ children }) => {
-  return (
-    <div
-      css={css`
-        width: 100%;
-        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
         position: fixed;
         background-color: hsla(0, 0%, 9%, 9);
-        z-index: 100;
+        z-index: 999;
         backdrop-filter: blur(20px);
-        @media (min-width: 766px) and (max-width: 1919px) {
-          height: 48px;
-          padding: 12px 0;
+        column-gap: 30rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        @media (min-width: 768px) and (max-width: 2000px) {
+          font-size: 18px;
         }
       `}
     >
-      <div
-        css={css`
-          margin: auto;
-          background-color: transparent;
-        `}
-      >
-        {children}
-      </div>
+      {children}
     </div>
   );
 };
 
-export const Logo = ({ children }) => {
+export const Logo = () => {
   return (
-    <div
+    <img
+      alt="로고"
+      src={logo}
       css={css`
-        display: flex;
-        -webkit-box-align: center;
-        align-items: center;
+        height: auto;
+        width: 155px;
+        transition: 0.4s all;
+
+        &:hover {
+          opacity: 70%;
+        }
       `}
-    >
-      <button
-        css={css`
-          width: 63px;
-          height: 21px;
-          margin-left: 100px;
-          /* background: logo; */
-          cursor: pointer;
-        `}
-      />
-    </div>
+    />
   );
 };
 
@@ -96,9 +51,9 @@ export const MenuWrapper = ({ children }) => {
     <div
       css={css`
         height: 100%;
-        -webkit-box-pack: center;
         display: flex;
-        align-items: center;
+        column-gap: 2.5em;
+        transition: 0.4s all;
       `}
     >
       {children}
@@ -111,11 +66,10 @@ export const Menu = ({ children }) => {
     <div
       css={css`
         color: #7f7f7f;
-        font-size: 18px;
+        font-size: 0.875em;
         font-weight: 500;
+        letter-spacing: -0.03em;
         cursor: pointer;
-        padding-left: 36px;
-        /* line-height: 36px; */
       `}
     >
       {children}
