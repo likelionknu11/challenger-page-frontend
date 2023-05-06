@@ -18,6 +18,7 @@ const container = css`
   cursor: pointer;
   box-sizing: border-box;
   margin:10px;
+  margin-left: auto;
   
 `;
 
@@ -170,6 +171,7 @@ const github = css`
   height: 30px;
   background: #d9d9d9;
   border-radius: 5px;
+  
   margin-right: 10px;
   text-align: center;
   text-decoration: none;

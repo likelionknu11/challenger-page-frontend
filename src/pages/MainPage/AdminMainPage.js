@@ -13,7 +13,7 @@ const AdminMainPage = () => {
     
     return (
     <>
-        <MainTitle> {count} 개의 프로젝트가 있어요. </MainTitle>
+        <MainTitle> {count} 개의 대기 프로젝트가 있어요. </MainTitle>
         <Mainpage>
         {data2 && data2.Project.map(Project => (
             <Link key={Project.id} to={`/admin/Detail/${Project.id}`}>
@@ -26,6 +26,7 @@ const AdminMainPage = () => {
             </Link>
         ))}
       </Mainpage>
+      <MainTitle> 승인 프로젝트 </MainTitle>
     </>
 
     )

@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
-import React, { useState } from 'react';
-import Modal from '../common/Modal/Modal';
-
+import { useState } from 'react';
+import RefuseModal from '../common/Modal/RefuseModal';
 
 export const ThumPage = ({ children }) => {
   return (
@@ -188,7 +187,7 @@ export const ThumSpan = ({ children }) => {
               >
                   {children}
           </button>
-          <Modal open={modalOpen} close={closeModal} header="Modal heading" />
+          <RefuseModal open={modalOpen} close={closeModal} header="Modal heading" />
       </>
   );
 };

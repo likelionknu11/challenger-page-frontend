@@ -2,7 +2,7 @@ import React from 'react';
 import {Button } from '../../DetailPage/DetailPageCss'
 import { ModalSection,ModalHeaderButton, OpenModals,ModalHeader,ModalText,ModalBody, ModalFooter,ModalTitle} from './ModalCss';
 
-const Modal = (props) => {
+const RefuseModal = (props) => {
   const {open, close} = props;
 
   const any = () => {
@@ -38,4 +38,4 @@ const Modal = (props) => {
     </div>
   );
 };
-export default Modal
+export default RefuseModal
