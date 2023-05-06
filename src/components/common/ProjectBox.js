@@ -17,7 +17,8 @@ const container = css`
   border-radius: 10px;
   cursor: pointer;
   box-sizing: border-box;
-  margin-top: 150px;
+  margin:10px;
+  
 `;
 
 const subContainer1 = css`
@@ -171,6 +172,7 @@ const github = css`
   border-radius: 5px;
   margin-right: 10px;
   text-align: center;
+  text-decoration: none;
 `;
 
 const image = css`
@@ -185,7 +187,6 @@ export default function ProjectBox(prop) {
     <div css={container} onClick={prop.onClick}>
       <div css={subContainer1}>
         <div css={pic}>
-          썸네일
           {/* <img src="{project.image}" css={image} alt="썸네일" /> */}
         </div>
       </div>
@@ -196,12 +197,14 @@ export default function ProjectBox(prop) {
           <div css={tag}>앱</div>
         </div>
         <div css={content}>
-          <h5 css={title}>새내기 미션북{/*{project.title}*/}</h5>
-          <p css={subTitle}>프로젝트 간략한 설명{/*{project.explain}*/}</p>
+        <h5 css={title}>{prop.title}</h5>
+          <p css={subTitle}>{prop.explain}</p>
         </div>
         <div css={icons}>
           <div css={icon}>
+            <Link to ={prop.Git}>
             <AiFillGithub css={github} />
+            </Link>
           </div>
           <div css={icon}>아이콘</div>
         </div>
