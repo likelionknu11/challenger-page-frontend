@@ -25,11 +25,9 @@ const UserDetailpage = ({project}) => {
       <ThumText>프로젝트 설명</ThumText>
       <ThumText>{project.TeamIntro}</ThumText>
       <ThumFoot>
-        <Link to="/">
-            <Button btnColor="gray" onClick={any}>뒤로가기</Button>
-        </Link>
-            <Button btnColor="blue" onClick={any}>승인</Button>
-          <MadalButton backcolor='#4F85EB' color ='white'>거절</MadalButton>
+      <Link to="/">
+              <Button btnColor="gray" onClick={any}>뒤로가기</Button>
+          </Link>
       </ThumFoot>
     </ThumPage>
 
