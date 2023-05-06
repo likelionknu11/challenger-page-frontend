@@ -111,7 +111,6 @@ export const InputBox = forwardRef(
             margin-left: 0.4em;
             font-weight: normal;
           }
-          ImgRef
           &:focus {
             border-color: white;
             outline-color: white;
