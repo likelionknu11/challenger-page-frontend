@@ -20,7 +20,7 @@ const UserMainPage = () => {
         <MainTitle> {count} 개의 프로젝트가 있어요. </MainTitle>
         <Mainpage>
         {data && data.Project.map(Project => (
-            <Link key={Project.id} to={`/userDetail/${Project.id}`}>
+            <Link key={Project.id} to={`/detail/${Project.id}`}>
               <ProjectBox 
                 key={Project.id} 
                 title={Project.ProjectTitle}

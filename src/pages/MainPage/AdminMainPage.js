@@ -16,7 +16,7 @@ const AdminMainPage = () => {
         <MainTitle> {count} 개의 프로젝트가 있어요. </MainTitle>
         <Mainpage>
         {data2 && data2.Project.map(Project => (
-            <Link key={Project.id} to={`/adminDetail/${Project.id}`}>
+            <Link key={Project.id} to={`/admin/Detail/${Project.id}`}>
               <ProjectBox 
                 key={Project.id} 
                 title={Project.ProjectTitle}

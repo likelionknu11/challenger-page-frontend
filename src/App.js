@@ -14,27 +14,28 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      {/* USER  */}
         <Routes>
           <Route element={<UserNav />}>
             <Route path="/" element={<Test />} />
             <Route path="/userForm" element={<UserFormPage />} />
-            <Route path="/admin" element={<AdminMainPage />} />
+            {data.Project.map((project) => (
+            <Route path={`/detail/${project.id}`} key={project.id}
+              element={ <UserDetailPage project={project} />}>
+            </Route>
+
+            ))}
           </Route>
         </Routes>
 
         <Routes>
           <Route element={<AdminNav />}>
-
-            {data.Project.map((project) => (
-            <Route path={`/userDetail/${project.id}`} key={project.id}
-              element={ <UserDetailPage project={project} />}>
-            </Route>
-            ))}
-
-            {data2.Project.map((project) => (
-            <Route path={`/adminDetail/${project.id}`} key={project.id}
+          <Route path="/admin/main" element={<AdminMainPage />} />
+          {data2.Project.map((project) => (
+            <Route path={`/admin/detail/${project.id}`} key={project.id}
               element={ <AdminDetailPage project={project} />}>
             </Route>
+
             ))}
           </Route>
         </Routes>
@@ -42,24 +43,20 @@ function App() {
         <Routes>
           <Route path="/" element={<UserMainPage />} />
           <Route path="/userForm" element={<UserFormPage />} />
-          <Route path="/admin" element={<AdminMainPage />} />
+          <Route path="/admin/main" element={<AdminMainPage />} />
           {data.Project.map((project) => (
-          <Route path={`/userDetail/${project.id}`} key={project.id}
+          <Route path={`/detail/${project.id}`} key={project.id}
             element={ <UserDetailPage project={project} />}>
           </Route>
           ))}
 
           {data2.Project.map((project) => (
-            <Route path={`/adminDetail/${project.id}`} key={project.id}
+            <Route path={`/admin/detail/${project.id}`} key={project.id}
               element={ <AdminDetailPage project={project} />}>
             </Route>
           ))}
         </Routes>
 
-
-        <Routes>
-          <Route path="/test" element={<Test />} />
-        </Routes>
       </BrowserRouter>
 
     </div>

@@ -23,7 +23,7 @@ const AdminDetailPage = ({project}) => {
       <ThumText>프로젝트 설명</ThumText>
       <ThumText>{project.TeamIntro}</ThumText>
       <ThumFoot>
-        <Link to="/admin">
+        <Link to="/admin/main">
               <Button btnColor="gray" onClick={any}>뒤로가기</Button>
           </Link>
       </ThumFoot>
