@@ -1,8 +1,7 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   FormCaption,
   InputBox,
-  InputImg,
   InputTitle,
   Section,
   TextAreaBox,
@@ -15,21 +14,25 @@ export const UserFormPage = () => {
   const [projectTitle, setprojectTitle] = useState("");
   const [teamTitle, setTeamTitle] = useState("");
   const [teamBoss, setTeamBoss] = useState("");
+  const [teamBossNum, setTeamBossNum] = useState("");
   const [gitHubLink, setGitHubLink] = useState("");
-  const [inputs, setInputs] = useState([{ id: 1, value: "" }]);
+  const [inputs, setInputs] = useState([{ id: 1, value: "", num: "" }]);
 
   const ImgRef = useRef(null);
   const ImgRefName = useRef(null);
 
   //선택한 이미지 파일 처리
   const handleFileInputChange = (event) => {
-    const selectedFile = event.target.files[0];
-    ImgRefName.current.value = selectedFile.name;
+    let selectedFile = event.target.files[0];
+    if (selectedFile !== undefined) {
+      ImgRefName.current.value = selectedFile.name;
+    } else return;
   };
 
   //이미지 업로드 버튼 클릭 함수
   const onClickImgBtn = () => {
-    ImgRef.current.click();
+    if (ImgRef !== null) ImgRef.current.click();
+    else return;
   };
 
   //팀원 state 설정
@@ -37,6 +40,18 @@ export const UserFormPage = () => {
     const newInputs = inputs.map((input) => {
       if (input.id === id) {
         return { ...input, value };
+      }
+      return input;
+    });
+    setInputs(newInputs);
+  };
+
+  //팀원 학번 state 설정
+  const handleInputNumChange = (id, num) => {
+    num = num.replace(/[^0-9]/g, "");
+    const newInputs = inputs.map((input) => {
+      if (input.id === id) {
+        return { ...input, num };
       }
       return input;
     });
@@ -57,6 +72,10 @@ export const UserFormPage = () => {
         break;
       case "팀장":
         setTeamBoss(value);
+        break;
+      case "팀장학번":
+        const teamBossId = e.target.value.replace(/[^0-9]/g, "");
+        setTeamBossNum(teamBossId);
         break;
       case "깃허브":
         setGitHubLink(value);
@@ -98,6 +117,7 @@ export const UserFormPage = () => {
               onChange={handleChange}
               value={projectTitle}
               max={30}
+              width="46.99vw"
             />
           </td>
         </tr>
@@ -112,6 +132,7 @@ export const UserFormPage = () => {
               onChange={handleChange}
               value={teamTitle}
               max={30}
+              width="46.99vw"
             />
           </td>
         </tr>
@@ -121,11 +142,20 @@ export const UserFormPage = () => {
           </td>
           <td>
             <InputBox
-              placeholder="팀장님의 성함이 궁금합니다!"
+              placeholder="성함을 적어주세요"
               name="팀장"
               onChange={handleChange}
               value={teamBoss}
               max={10}
+              width="23.1vw"
+            />
+            <InputBox
+              placeholder="학번을 적어주세요"
+              name="팀장학번"
+              onChange={handleChange}
+              value={teamBossNum}
+              max={9}
+              width="23.1vw"
             />
           </td>
         </tr>
@@ -137,21 +167,28 @@ export const UserFormPage = () => {
             <td>
               <div key={input.id}>
                 <InputBox
-                  placeholder={`팀원${input.id}`}
+                  placeholder={`팀원${input.id} 성함`}
                   name={`팀원${input.id}`}
                   value={input.value}
                   onChange={(e) => handleInputChange(input.id, e.target.value)}
                   max={10}
+                  width="23.1vw"
+                />
+                <InputBox
+                  placeholder={`팀원${input.id} 학번`}
+                  name={`팀원${input.id}학번`}
+                  value={input.num}
+                  onChange={(e) =>
+                    handleInputNumChange(input.id, e.target.value)
+                  }
+                  max={9}
+                  width="23.1vw"
                 />
               </div>
             </td>
             <td>
               {input.id === 1 && (
-                <Button
-                  btnColor="blue"
-                  backColor="grey"
-                  onClick={handleAddButtonClick}
-                >
+                <Button btnColor="gray" onClick={handleAddButtonClick}>
                   추가
                 </Button>
               )}
@@ -174,6 +211,7 @@ export const UserFormPage = () => {
               name="깃허브"
               onChange={handleChange}
               value={gitHubLink}
+              width="46.99vw"
             />
           </td>
         </tr>
@@ -208,15 +246,29 @@ export const UserFormPage = () => {
               placeholder="이미지 파일 업로드"
               readonly="true"
               ref={ImgRefName}
+              width="46.99vw"
             />
           </td>
           <td>
-            <Button btnColor="blue" onClick={onClickImgBtn}>
+            <Button btnColor="gray" onClick={onClickImgBtn}>
               파일 선택
             </Button>
           </td>
         </tr>
       </table>
+      <Button btnColor="blue">확인</Button>
+      <div style={{ color: "white" }}>프로젝트 명 : {projectTitle}</div>
+      <div style={{ color: "white" }}>팀 명 : {teamTitle}</div>
+      <div style={{ color: "white" }}>
+        팀 장 : {teamBoss} 팀장 학번 : {teamBossNum}
+      </div>
+      {inputs.map((input) => (
+        <div style={{ color: "white" }}>
+          팀원{input.id} : {input.value} , 팀원{input.id}학번 : {input.num}
+        </div>
+      ))}
+      <div style={{ color: "white" }}>프로젝트 설명 : {projectExplain}</div>
+      <div style={{ color: "white" }}>깃허브 주소 : {gitHubLink}</div>
     </Section>
   );
 };
