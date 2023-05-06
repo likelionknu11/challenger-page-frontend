@@ -12,10 +12,7 @@ export const auth = create(set => ({
   },
   realPw: "qaearqa",
   adminState: false,
-  loginAuth: () => {
+  loginState: () => {
     set(() => ({ adminState: true }));
-  },
-  logoutAuth: () => {
-    set(() => ({ adminState: false }));
   },
 }));

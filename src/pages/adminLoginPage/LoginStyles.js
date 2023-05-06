@@ -1,17 +1,21 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
+import logo from "../../assets/logo.png";
 
-export const Logo = ({ children }) => {
+export const Logo = () => {
   return (
-    <div
+    <img
+      alt="로고"
+      src={logo}
       css={css`
-        border: solid white;
-        color: white;
+        width: 16em;
+        margin-bottom: 1em;
+        @media (min-width: 1100px) and (max-width: 2000px) {
+          font-size: 18px;
+        }
       `}
-    >
-      로고
-    </div>
+    />
   );
 };
 
@@ -46,10 +50,13 @@ export const InputBox = prop => {
         transition: all 0.4s ease 0s;
         outline-color: #7f7f7f;
         color: white;
-        font-size: 11px;
-        padding: 1px 2px 1px 1em;
+        font-size: 0.688rem;
+        padding: 0.063rem 0.125rem 0.063rem 1em;
         &::placeholder {
           color: white;
+        }
+        @media (min-width: 1100px) and (max-width: 2000px) {
+          font-size: 14px;
         }
       `}
     />
@@ -73,9 +80,12 @@ export const LoginBtn = prop => {
         background-color: #7f7f7f;
         display: inline-block;
         text-align: center;
-        padding: 1px 6px;
-        font-size: 12px;
+        padding: 0.063rem 0.375rem;
+        font-size: 0.75rem;
         font-weight: 1000;
+        @media (min-width: 1100px) and (max-width: 2000px) {
+          font-size: 15px;
+        }
       `}
     >
       {prop.children}

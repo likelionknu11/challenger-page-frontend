@@ -18,11 +18,8 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route path="/" element={<Test />} />
-          <Route path="/userForm" element={<UserFormPage />} />
-        </Routes>
+          <Route path="/admin" element={<AdminLoginPage />} />
 
-        <Routes>
           <Route element={<AdminNav />}>
             <Route path="/admin/main" element={<Test />} />
           </Route>

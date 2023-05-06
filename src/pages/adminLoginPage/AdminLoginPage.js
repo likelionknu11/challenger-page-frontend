@@ -1,6 +1,6 @@
 /**
  * 관리자 로그인 페이지
- * + 관리자 페이지 들어오면 인증 관리하기
+ * + 관리자 페이지 들어오면 인증 관리 테스트하기
  */
 import React, { useState } from "react";
 import LoginBox, { InputBox, LoginBtn, Logo } from "./LoginStyles";
@@ -9,7 +9,7 @@ import { auth } from "../../components/store";
 
 const AdminLoginPage = () => {
   const navigate = useNavigate();
-  const { id, setId, pw, setPw, realId, realPw } = auth();
+  const { id, setId, pw, setPw, realId, realPw, loginState } = auth();
 
   const handleChange = e => {
     if (e.target.name === "id") {
@@ -23,6 +23,7 @@ const AdminLoginPage = () => {
   const handleClick = () => {
     if (id === realId && pw === realPw) {
       navigate("/admin/main");
+      loginState();
     } else {
       alert("잘못된 접근입니다!");
     }
