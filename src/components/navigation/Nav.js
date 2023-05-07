@@ -21,6 +21,10 @@ export const Nav = ({ children }) => {
         @media (min-width: 768px) and (max-width: 2000px) {
           font-size: 18px;
         }
+        // 메뉴바 합칠 예정
+        @media (max-width: 1099px) {
+          display: none;
+        }
       `}
     >
       {children}
@@ -61,7 +65,7 @@ export const MenuWrapper = ({ children }) => {
   );
 };
 
-export const Menu = ({ children }) => {
+export const Menu = ({ onClick, children }) => {
   return (
     <div
       css={css`
@@ -71,6 +75,7 @@ export const Menu = ({ children }) => {
         letter-spacing: -0.03em;
         cursor: pointer;
       `}
+      onClick={onClick}
     >
       {children}
     </div>
