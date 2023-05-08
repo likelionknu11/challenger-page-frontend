@@ -19,7 +19,7 @@ export const Logo = () => {
   );
 };
 
-export const InputBox = prop => {
+export const InputBox = props => {
   const typeStyles = {
     id: {
       name: "id",
@@ -33,11 +33,13 @@ export const InputBox = prop => {
     },
   };
 
-  const typeData = prop.type === "id" ? typeStyles.id : typeStyles.pw;
+  const typeData = props.type === "id" ? typeStyles.id : typeStyles.pw;
 
   return (
     <input
-      onChange={prop.onchange}
+      ref={props.myInputRef}
+      onKeyPress={props.onKeyPress}
+      onChange={props.onchange}
       name={typeData.name}
       type={typeData.type}
       placeholder={typeData.placeholder}

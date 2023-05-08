@@ -1,7 +1,7 @@
 // 관리자 네비게이션바
 import React, { useEffect } from "react";
-import { AdNav, Logo } from "./NavStyle";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Nav, Logo } from "./NavStyle";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../store";
 
 const AdminNav = () => {
@@ -16,11 +16,11 @@ const AdminNav = () => {
   }, [adminState]);
 
   return (
-    <AdNav>
+    <Nav>
       <Link to="/admin/main">
         <Logo>로고</Logo>
       </Link>
-    </AdNav>
+    </Nav>
   );
 };
 
