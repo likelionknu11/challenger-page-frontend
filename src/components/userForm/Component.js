@@ -27,7 +27,7 @@ export const Section = ({ children }) => {
 
 export const FormCaption = ({ children }) => {
   return (
-    <caption
+    <div
       css={css`
         font-size: 24px;
         @media screen and (max-width: 1000px) {
@@ -38,7 +38,7 @@ export const FormCaption = ({ children }) => {
       `}
     >
       {children}
-    </caption>
+    </div>
   );
 };
 

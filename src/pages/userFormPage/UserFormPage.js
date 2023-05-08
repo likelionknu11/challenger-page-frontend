@@ -106,155 +106,159 @@ export const UserFormPage = () => {
       </FormCaption>
       <InputTitle>관리자가 승낙 시 메인 페이지에 개설됩니다. </InputTitle>
       <table>
-        <tr>
-          <td>
-            <InputTitle>프로젝트 명</InputTitle>
-          </td>
-          <td>
-            <InputBox
-              placeholder="프로젝트명을 입력해주세요"
-              name="프젝명"
-              onChange={handleChange}
-              value={projectTitle}
-              max={30}
-              width="46.99vw"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <InputTitle>팀명</InputTitle>
-          </td>
-          <td>
-            <InputBox
-              placeholder="팀명을 입력해주세요"
-              name="팀명"
-              onChange={handleChange}
-              value={teamTitle}
-              max={30}
-              width="46.99vw"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <InputTitle>팀장</InputTitle>
-          </td>
-          <td>
-            <InputBox
-              placeholder="성함을 적어주세요"
-              name="팀장"
-              onChange={handleChange}
-              value={teamBoss}
-              max={10}
-              width="23.1vw"
-            />
-            <InputBox
-              placeholder="학번을 적어주세요"
-              name="팀장학번"
-              onChange={handleChange}
-              value={teamBossNum}
-              max={9}
-              width="23.1vw"
-            />
-          </td>
-        </tr>
-        {inputs.map((input) => (
+        <tbody>
           <tr>
             <td>
-              <InputTitle>팀원{input.id}</InputTitle>
+              <InputTitle>프로젝트 명</InputTitle>
             </td>
             <td>
-              <div key={input.id}>
-                <InputBox
-                  placeholder={`팀원${input.id} 성함`}
-                  name={`팀원${input.id}`}
-                  value={input.value}
-                  onChange={(e) => handleInputChange(input.id, e.target.value)}
-                  max={10}
-                  width="23.1vw"
-                />
-                <InputBox
-                  placeholder={`팀원${input.id} 학번`}
-                  name={`팀원${input.id}학번`}
-                  value={input.num}
-                  onChange={(e) =>
-                    handleInputNumChange(input.id, e.target.value)
-                  }
-                  max={9}
-                  width="23.1vw"
-                />
-              </div>
-            </td>
-            <td>
-              {input.id === 1 && (
-                <Button btnColor="gray" onClick={handleAddButtonClick}>
-                  추가
-                </Button>
-              )}
-              {input.id !== 1 && input.id === inputs.length && (
-                <Button btnColor="gray" onClick={handleCancelButtonClick}>
-                  삭제
-                </Button>
-              )}
+              <InputBox
+                placeholder="프로젝트명을 입력해주세요"
+                name="프젝명"
+                onChange={handleChange}
+                value={projectTitle}
+                max={30}
+                width="46.99vw"
+              />
             </td>
           </tr>
-        ))}
-        <tr>
-          <td>
-            <InputTitle>Github 주소</InputTitle>
-          </td>
-          <td>
-            <InputBox
-              placeholder="https 또는 http를 포함하는 링크 전체를 입력해주세요"
-              max={200}
-              name="깃허브"
-              onChange={handleChange}
-              value={gitHubLink}
-              width="46.99vw"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <InputTitle>프로젝트 설명</InputTitle>
-          </td>
-          <td>
-            <TextAreaBox
-              placeholder="프로젝트를 설명해주세요! (1000자이내)"
-              name="설명"
-              onChange={handleChange}
-              value={projectExplain}
-            />
-            <WordLength>{projectExplain.length}</WordLength>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <InputTitle>프로젝트 이미지</InputTitle>
-          </td>
-          <td>
-            <InputBox
-              type="file"
-              accept="image/*"
-              ref={ImgRef}
-              display="none"
-              onChange={handleFileInputChange}
-            />
-            <InputBox
-              type="text"
-              placeholder="이미지 파일 업로드"
-              readonly="true"
-              ref={ImgRefName}
-              width="46.99vw"
-            />
-          </td>
-          <td>
-            <Button btnColor="gray" onClick={onClickImgBtn}>
-              파일 선택
-            </Button>
-          </td>
-        </tr>
+          <tr>
+            <td>
+              <InputTitle>팀명</InputTitle>
+            </td>
+            <td>
+              <InputBox
+                placeholder="팀명을 입력해주세요"
+                name="팀명"
+                onChange={handleChange}
+                value={teamTitle}
+                max={30}
+                width="46.99vw"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <InputTitle>팀장</InputTitle>
+            </td>
+            <td>
+              <InputBox
+                placeholder="성함을 적어주세요"
+                name="팀장"
+                onChange={handleChange}
+                value={teamBoss}
+                max={10}
+                width="23.1vw"
+              />
+              <InputBox
+                placeholder="학번을 적어주세요"
+                name="팀장학번"
+                onChange={handleChange}
+                value={teamBossNum}
+                max={9}
+                width="23.1vw"
+              />
+            </td>
+          </tr>
+          {inputs.map((input) => (
+            <tr>
+              <td>
+                <InputTitle>팀원{input.id}</InputTitle>
+              </td>
+              <td>
+                <div key={input.id}>
+                  <InputBox
+                    placeholder={`팀원${input.id} 성함`}
+                    name={`팀원${input.id}`}
+                    value={input.value}
+                    onChange={(e) =>
+                      handleInputChange(input.id, e.target.value)
+                    }
+                    max={10}
+                    width="23.1vw"
+                  />
+                  <InputBox
+                    placeholder={`팀원${input.id} 학번`}
+                    name={`팀원${input.id}학번`}
+                    value={input.num}
+                    onChange={(e) =>
+                      handleInputNumChange(input.id, e.target.value)
+                    }
+                    max={9}
+                    width="23.1vw"
+                  />
+                </div>
+              </td>
+              <td>
+                {input.id === 1 && (
+                  <Button btnColor="gray" onClick={handleAddButtonClick}>
+                    추가
+                  </Button>
+                )}
+                {input.id !== 1 && input.id === inputs.length && (
+                  <Button btnColor="gray" onClick={handleCancelButtonClick}>
+                    삭제
+                  </Button>
+                )}
+              </td>
+            </tr>
+          ))}
+          <tr>
+            <td>
+              <InputTitle>Github 주소</InputTitle>
+            </td>
+            <td>
+              <InputBox
+                placeholder="https 또는 http를 포함하는 링크 전체를 입력해주세요"
+                max={200}
+                name="깃허브"
+                onChange={handleChange}
+                value={gitHubLink}
+                width="46.99vw"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <InputTitle>프로젝트 설명</InputTitle>
+            </td>
+            <td>
+              <TextAreaBox
+                placeholder="프로젝트를 설명해주세요! (1000자이내)"
+                name="설명"
+                onChange={handleChange}
+                value={projectExplain}
+              />
+              <WordLength>{projectExplain.length}</WordLength>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <InputTitle>프로젝트 이미지</InputTitle>
+            </td>
+            <td>
+              <InputBox
+                type="file"
+                accept="image/*"
+                ref={ImgRef}
+                display="none"
+                onChange={handleFileInputChange}
+              />
+              <InputBox
+                type="text"
+                placeholder="이미지 파일 업로드"
+                readonly={true}
+                ref={ImgRefName}
+                width="46.99vw"
+              />
+            </td>
+            <td>
+              <Button btnColor="gray" onClick={onClickImgBtn}>
+                파일 선택
+              </Button>
+            </td>
+          </tr>
+        </tbody>
       </table>
       <Button btnColor="blue">확인</Button>
     </Section>
