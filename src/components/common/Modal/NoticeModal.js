@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../../DetailPage/DetailPageCss";
 import {
   ModalSection,
   ModalHeaderButton,
@@ -7,19 +6,17 @@ import {
   ModalHeader,
   ModalText,
   ModalBody,
-  ModalFooter,
   ModalTitle,
+  ModalFooter,
 } from "./ModalCss";
+import Button from "../Button";
 
 const RefuseModal = props => {
-  const { open, close } = props;
+  const { modalState, close } = props;
 
-  const any = () => {
-    alert("함수 만들면 대체할 공간");
-  };
   return (
     <div>
-      {open ? (
+      {modalState ? (
         <OpenModals>
           <ModalSection>
             <ModalHeader>
@@ -30,22 +27,15 @@ const RefuseModal = props => {
 
               <ModalHeaderButton onClick={close}>&times;</ModalHeaderButton>
             </ModalHeader>
-
             <ModalBody>
-              <ModalText size="28">거절 하시겠습니까?.</ModalText>
+              <ModalText size="20">준비 중입니다.</ModalText>
               <ModalText size="20">
-                거절과 동시에 데이터가 사라집니다.
+                <br />
               </ModalText>
+              <Button btnColor="gray" onClick={close}>
+                확인
+              </Button>
             </ModalBody>
-
-            <ModalFooter>
-              <Button backcolor="#7B7B7B" color="#2B2B2B" onClick={close}>
-                취소
-              </Button>
-              <Button backcolor="#4F85EB" color="#FFFFFF" onClick={any}>
-                거절
-              </Button>
-            </ModalFooter>
           </ModalSection>
         </OpenModals>
       ) : null}
