@@ -10,6 +10,8 @@ import UserDetailPage from "./pages/DetailPage/userDetailPage";
 import AdminDetailPage from "./pages/DetailPage/adminDetailPage";
 import data from "./pages/MainPage/data.json";
 import data2 from "./pages/MainPage/data2.json";
+import AdminLoginPage from "./pages/adminLoginPage/AdminLoginPage";
+
 function App() {
   return (
     <div className="App">
@@ -30,6 +32,8 @@ function App() {
         </Routes>
 
         <Routes>
+          <Route path="/admin" element={<AdminLoginPage />} />
+
           <Route element={<AdminNav />}>
             <Route path="/admin/main" element={<AdminMainPage />} />
             {data2.Project.map(project => (
