@@ -14,6 +14,10 @@ export const Section = ({ children }) => {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media screen and (max-width: 1000px) {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
       `}
     >
       {children}
@@ -23,15 +27,18 @@ export const Section = ({ children }) => {
 
 export const FormCaption = ({ children }) => {
   return (
-    <caption
+    <div
       css={css`
         font-size: 24px;
+        @media screen and (max-width: 1000px) {
+          font-size: 20px;
+        }
         color: white;
         margin: 0.5em;
       `}
     >
       {children}
-    </caption>
+    </div>
   );
 };
 
@@ -43,14 +50,12 @@ export const InputTitle = ({ children }) => {
         display: inline;
         font-family: "Roboto";
         letter-spacing: -0.03em;
-        @media all and (min-width: 768px) and (max-width: 1099px) {
-          font-size: 14px;
-        }
-        @media all and (min-width: 1100px) and (max-width: 2000px) {
-          font-size: 15px;
-        }
+        font-size: 16px;
         color: white;
         align-items: center;
+        @media screen and (max-width: 1000px) {
+          font-size: 16px;
+        }
       `}
     >
       {children}
@@ -72,6 +77,7 @@ export const InputBox = forwardRef(
       key,
       accept,
       display,
+      width,
     },
     ref
   ) => {
@@ -79,9 +85,10 @@ export const InputBox = forwardRef(
       <input
         css={css`
           font-family: "Roboto";
-          width: 46.99vw;
+          width: ${width};
           background: #262626;
           line-height: 1.5em;
+
           padding: 0;
           padding-left: 1em;
           padding-bottom: 1em;
@@ -92,7 +99,10 @@ export const InputBox = forwardRef(
           border: 0.2em solid black;
           border-radius: 1em;
           box-sizing: border-box;
-          margin: 10px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-right: 5px;
+          margin-left: 5px;
           color: white;
           display: ${display};
 
@@ -101,7 +111,6 @@ export const InputBox = forwardRef(
             margin-left: 0.4em;
             font-weight: normal;
           }
-          ImgRef
           &:focus {
             border-color: white;
             outline-color: white;
@@ -200,7 +209,9 @@ export const TextAreaBox = ({ placeholder, name, onChange, value }) => {
         border: 0.2em solid black;
         border-radius: 1em;
         box-sizing: border-box;
-        margin: 10px;
+        margin: 5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
         resize: none;
         color: white;
 
